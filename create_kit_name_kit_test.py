@@ -114,3 +114,8 @@ def test_7_create_kit_for_user_contains_numbers_in_name_get_success_response():
 # El parámetro "name" no se pasa en la solicitud
 def test_8_create_kit_for_user_without_parameter_name_get_error_response():
     negative_assert_no_parameter("name")
+
+# Prueba 9. Creación de un nuevo kit dentro de un usuario/a
+# El parámetro "name" se pasa con un tipo de valor diferente (numerico)
+def test_9_create_kit_for_user_with_value_type_number_in_name_get_error_response():
+    negative_assert(123)
