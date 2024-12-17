@@ -42,15 +42,14 @@ Asegúrate de tener instaladas las siguientes herramientas:
    
 2. Instala las dependencias requeridas:
 
-   <div style="border-left: 6px solid #28a745; padding: 10px; margin: 10px 0; border-radius: 5px;">
-    <strong>✅ Nota para usuarios de PyCharm:</strong><br>
-    Si quieres instalar las dependencias desde <code>requirements.txt</code> directamente en PyCharm, te puede interesar visitar este enlace:<br>
-    <a href="https://www.jetbrains.com/help/pycharm/managing-dependencies.html#apply_dependencies" target="_blank">Guía oficial de PyCharm para gestionar dependencias</a>
-   </div>
+> [!NOTE]  
+> ✅ Usuarios de PyCharm:
+Si quieres instalar las dependencias desde `requirements.txt` directamente en PyCharm, te puede interesar visitar este enlace:
+<a href="https://www.jetbrains.com/help/pycharm/managing-dependencies.html#apply_dependencies" target="_blank">Guía oficial de PyCharm para gestionar dependencias de un `requirements.txt`</a>
    
-    ```bash
-    pip install -r requirements.txt
-    ```
+ ```bash
+ pip install -r requirements.txt
+ ```
 ---
 
 ## 🚦 **Casos de Prueba**  
