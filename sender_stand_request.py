@@ -14,7 +14,7 @@ def post_new_user(body):
         headers=data.headers_for_user_creation,
         json=body
     )
-
+# Funcion para crear un nuevo kit para un usuario
 def post_new_kit_for_user(kit_headers, kit_body):
     return requests.post(
         url=url_create_kit_for_specific_user,
