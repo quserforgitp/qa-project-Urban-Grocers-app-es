@@ -77,3 +77,8 @@ def test_3_create_kit_for_user_0_letters_in_name_get_error_response():
 # El parámetro "name" contiene 512 caracteres
 def test_4_create_kit_for_user_512_letters_in_name_get_error_response():
     negative_assert(data.VALID_STRING_WITH_512_LETTERS)
+
+# Prueba 5. Creación de un nuevo kit dentro de un usuario/a
+# El parámetro "name" contiene caracteres especiales ("№%@",")
+def test_5_create_kit_for_user_special_characters_in_name_get_success_response():
+    positive_assert('"№%@","')
