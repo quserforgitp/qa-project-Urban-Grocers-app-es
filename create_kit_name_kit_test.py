@@ -52,3 +52,8 @@ def negative_assert(kit_name):
 # El parámetro "name" contiene 1 caracter
 def test_1_create_kit_for_user_1_letter_in_name_get_success_response():
     positive_assert("a")
+
+# Prueba 2. Creación de un nuevo kit dentro de un usuario/a
+# El parámetro "name" contiene 511 caracteres
+def test_2_create_kit_for_user_511_letters_in_name_get_success_response():
+    positive_assert(data.VALID_STRING_WITH_511_LETTERS)
