@@ -57,6 +57,23 @@ def negative_assert(kit_name):
     # Comprueba si el codigo de la respuesta es 400
     assert kit_response.status_code == 400
 
+def negative_assert_no_parameter(param_name):
+    # El token recibido del usuario creado se guarda en la variable token
+    token = post_new_user_and_extract_its_token()
+    # Los headers con los datos necesarios actualizados para crear un kit para un usuario se guarda en la variable kit_headers
+    kit_headers = get_create_kit_headers(token)
+
+    # El body actualizado para crear un kit para un usuario se guarda en la variable kit_body
+    kit_body = get_create_kit_body("place_holder_value")
+    # El parametro param_name se elimina de la solicitud
+    kit_body.pop(param_name)
+
+    # Guarda el resultado de llamar a la función a la variable "response"
+    response = sender_stand_request.post_new_kit_for_user(kit_headers, kit_body)
+
+    # Comprueba si la respuesta contiene el código 400
+    assert response.status_code == 400
+
 # TESTS
 # Prueba 1. Creación de un nuevo kit dentro de un usuario/a
 # El parámetro "name" contiene 1 caracter
@@ -92,3 +109,8 @@ def test_6_create_kit_for_user_contains_blank_characters_in_name_get_success_res
 # El parámetro "name" contiene numeros
 def test_7_create_kit_for_user_contains_numbers_in_name_get_success_response():
     positive_assert("123")
+
+# Prueba 8. Creación de un nuevo kit dentro de un usuario/a
+# El parámetro "name" no se pasa en la solicitud
+def test_8_create_kit_for_user_without_parameter_name_get_error_response():
+    negative_assert_no_parameter("name")
