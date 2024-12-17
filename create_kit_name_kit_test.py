@@ -87,3 +87,8 @@ def test_5_create_kit_for_user_special_characters_in_name_get_success_response()
 # El parámetro "name" contiene espacios
 def test_6_create_kit_for_user_contains_blank_characters_in_name_get_success_response():
     positive_assert(" A Aaa ")
+
+# Prueba 7. Creación de un nuevo kit dentro de un usuario/a
+# El parámetro "name" contiene numeros
+def test_7_create_kit_for_user_contains_numbers_in_name_get_success_response():
+    positive_assert("123")
